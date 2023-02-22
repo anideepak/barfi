@@ -118,6 +118,12 @@ class Block(object):
             return self._state[key]
         else:
             raise ValueError(f'Key: {key} does not exist in state.')
+    def my_block_func(self):
+        #get the value of the input interface
+        in_1=self.get_interface(name='input_1')
+        out_1 = (in_1/2) #..perform computation
+        # get the value of the output interface
+        self.set_interface(name='output_1', value=out_1) 
 
     def add_option(self, name: str, type: str, **kwargs) -> None:
         """
